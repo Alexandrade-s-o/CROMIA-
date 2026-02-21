@@ -160,12 +160,17 @@ const PortfolioGrid: React.FC = () => {
             )}
           </div>
         )}
-        {/* Hover Instruction */}
-        <div className="mt-8 mb-4 animate-fade-in flex flex-col items-center">
-          <div className={`h-px w-12 mb-4 opacity-50 ${selectedCategory?.id === 'moda' ? 'bg-[#FFD1DC]' : 'bg-[#D4A017]'}`} />
-          <p className="text-[9px] uppercase tracking-[0.4em] text-zinc-400 font-bold text-center">
-            Pasa el mouse o toca las imágenes para revelar el color
+        {/* Didactic Instruction Guide */}
+        <div className="mt-8 mb-12 animate-fade-in flex flex-col items-center max-w-xs text-center">
+          <div className="relative w-40 h-1 bg-zinc-100 rounded-full mb-6 overflow-hidden">
+            <div className="absolute top-0 left-0 h-full bg-[#D4A017] w-1/3 animate-tutorial-slide" />
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 font-bold leading-relaxed">
+            Mecanismo de Desbloqueo: <br />
+            <span className="text-zinc-900">Desliza o mantén presionado</span> <br />
+            para revelar el color y la imagen completa
           </p>
+          <div className={`mt-6 h-px w-12 opacity-50 ${selectedCategory?.id === 'moda' ? 'bg-[#FFD1DC]' : 'bg-[#D4A017]'}`} />
         </div>
       </div>
 
@@ -196,9 +201,9 @@ const PortfolioGrid: React.FC = () => {
               </div>
 
               {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 flex flex-col items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <span className="text-[7px] text-white/40 uppercase tracking-[0.4em] font-bold">Unlock</span>
-                <div className="w-full h-[2.5px] bg-white/10 rounded-full overflow-hidden">
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                <span className="text-[8px] text-white/60 uppercase tracking-[0.6em] font-black drop-shadow-md">Unlock</span>
+                <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
                   <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1.2s] ease-in-out" />
                 </div>
               </div>
@@ -227,9 +232,9 @@ const PortfolioGrid: React.FC = () => {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
               {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 flex flex-col items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <span className="text-[6px] text-white/50 uppercase tracking-[0.5em] font-bold">Unlock</span>
-                <div className="w-full h-[1px] bg-white/10 overflow-hidden">
+              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                <span className="text-[7px] text-white/70 uppercase tracking-[0.6em] font-black drop-shadow-md">Unlock</span>
+                <div className="w-full h-[1.5px] bg-white/30 overflow-hidden backdrop-blur-sm">
                   <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1s] ease-in-out" />
                 </div>
               </div>
@@ -319,10 +324,16 @@ const PortfolioGrid: React.FC = () => {
           from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes tutorialSlide {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(200%); }
+          100% { transform: translateX(-100%); }
+        }
         .animate-modal-reveal { animation: modalReveal 0.4s ease-out forwards; }
         .animate-image-reveal { animation: imageReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .animate-slide-up { animation: slideUpGrid 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .animate-fade-in-quick { animation: modalReveal 0.5s ease-out forwards; }
+        .animate-tutorial-slide { animation: tutorialSlide 3s ease-in-out infinite; }
       `}} />
     </div>
   );

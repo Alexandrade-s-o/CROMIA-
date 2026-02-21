@@ -223,27 +223,9 @@ const PortfolioGrid: React.FC = () => {
               <img
                 src={image.url}
                 alt={`${selectedCategory.title} ${idx}`}
-                className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-125 group-active:grayscale-0 group-active:scale-125"
-                style={{ transitionDelay: '0.8s' }}
+                className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-active:grayscale-0 group-active:scale-105"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500 flex items-center justify-center">
-                {/* Visual Hint */}
-                <div className="flex flex-col items-center gap-3 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
-                  <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center">
-                    <div className="w-1 h-1 bg-white rounded-full animate-ping" />
-                  </div>
-                  <span className="text-[8px] text-white/50 uppercase tracking-[0.5em] font-bold">Touch to Unlock</span>
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center h-full">
-                  <div className="w-40 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="text-[10px] text-white uppercase tracking-[0.8em] font-black drop-shadow-lg">Revealing</span>
-                    <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-md">
-                      <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[0.8s] ease-out" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
               <div className="absolute bottom-6 left-6 pointer-events-none">
                 <span className="text-white text-[9px] font-bold uppercase tracking-[0.3em] opacity-80 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
@@ -291,16 +273,27 @@ const PortfolioGrid: React.FC = () => {
           </button>
 
           <div
-            className="relative w-full h-full flex items-center justify-center p-4 md:p-12"
+            className="relative w-full h-full flex items-center justify-center p-4 md:p-12 group/modal"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               key={activeImage.id}
               src={activeImage.url}
-              className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-zoom-out animate-image-reveal"
+              className="max-w-full max-h-full object-contain grayscale group-hover/modal:grayscale-0 transition-all duration-[1s] ease-in-out cursor-zoom-out animate-image-reveal"
+              style={{ transitionDelay: '1.2s' }}
               alt="Full view"
               onClick={() => setActiveIndex(null)}
             />
+
+            {/* Central iPhone-style Unlocker for the Modal */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none group-hover/modal:opacity-0 transition-opacity duration-500 delay-1000">
+              <div className="w-48 flex flex-col items-center gap-3">
+                <span className="text-[10px] text-white/80 uppercase tracking-[0.8em] font-black drop-shadow-lg animate-pulse">Slide to Reveal</span>
+                <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-md border border-white/10 shadow-2xl">
+                  <div className="h-full bg-[#D4A017] w-0 group-hover/modal:w-full transition-all duration-[1s] ease-in-out" />
+                </div>
+              </div>
+            </div>
 
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center pointer-events-none w-full">
               <span className={`text-[8px] font-bold uppercase tracking-[0.8em] ${selectedCategory?.id === 'moda' ? 'text-[#FFD1DC]' : 'text-white/30'}`}>

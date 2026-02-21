@@ -160,18 +160,11 @@ const PortfolioGrid: React.FC = () => {
             )}
           </div>
         )}
-        {/* Didactic Instruction Guide */}
-        <div className="mt-8 mb-12 animate-fade-in flex flex-col items-center max-w-xs text-center">
-          <div className="relative w-40 h-1 bg-zinc-100 rounded-full mb-6 overflow-hidden">
-            <div className="absolute top-0 left-0 h-full bg-[#D4A017] w-1/3 animate-tutorial-slide" />
-          </div>
-          <p className="text-[10px] uppercase tracking-[0.4em] text-zinc-500 font-bold leading-relaxed">
-            Mecanismo de Desbloqueo: <br />
-            <span className="text-zinc-900">Desliza o mantén presionado</span> <br />
-            para revelar el color y la imagen completa
-          </p>
-          <div className={`mt-6 h-px w-12 opacity-50 ${selectedCategory?.id === 'moda' ? 'bg-[#FFD1DC]' : 'bg-[#D4A017]'}`} />
-        </div>
+        {/* Title and subtle hint */}
+        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-zinc-900 animate-slide-up">
+          Portafolio
+        </h2>
+        <div className="w-12 h-px bg-zinc-900 mt-4 opacity-20" />
       </div>
 
       {/* Moda Section Ambient Glow */}
@@ -192,19 +185,22 @@ const PortfolioGrid: React.FC = () => {
               <img
                 src={category.coverImage}
                 alt={category.title}
-                className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 group-active:grayscale-0 group-active:scale-105"
+                className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:scale-110 group-hover:grayscale-0 group-active:grayscale-0 group-active:scale-110"
+                style={{ transitionDelay: '0.8s' }}
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-500">
-                <span className="text-white text-2xl font-black uppercase tracking-tighter" style={{ borderBottom: '2px solid #D4A017' }}>
-                  Ver {category.title}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500 flex items-center justify-center">
+                <div className="text-center">
+                  <span className="text-white text-2xl font-black uppercase tracking-tighter mb-4 block" style={{ borderBottom: '2px solid #D4A017' }}>
+                    Ver {category.title}
+                  </span>
 
-              {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <span className="text-[8px] text-white/60 uppercase tracking-[0.6em] font-black drop-shadow-md">Unlock</span>
-                <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
-                  <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1.2s] ease-in-out" />
+                  {/* Central Unlocker */}
+                  <div className="mx-auto w-32 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <span className="text-[10px] text-white/80 uppercase tracking-[0.6em] font-black">Unlock</span>
+                    <div className="w-full h-1 bg-white/30 rounded-full overflow-hidden backdrop-blur-sm">
+                      <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[0.8s] ease-in-out" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -227,15 +223,25 @@ const PortfolioGrid: React.FC = () => {
               <img
                 src={image.url}
                 alt={`${selectedCategory.title} ${idx}`}
-                className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-125 group-active:grayscale-0 group-active:scale-125 delay-300"
+                className="w-full h-full object-cover grayscale transition-all duration-[1s] group-hover:grayscale-0 group-hover:scale-125 group-active:grayscale-0 group-active:scale-125"
+                style={{ transitionDelay: '0.8s' }}
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500 flex items-center justify-center">
+                {/* Visual Hint */}
+                <div className="flex flex-col items-center gap-3 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                  <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center">
+                    <div className="w-1 h-1 bg-white rounded-full animate-ping" />
+                  </div>
+                  <span className="text-[8px] text-white/50 uppercase tracking-[0.5em] font-bold">Touch to Unlock</span>
+                </div>
 
-              {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <span className="text-[7px] text-white/70 uppercase tracking-[0.6em] font-black drop-shadow-md">Unlock</span>
-                <div className="w-full h-[1.5px] bg-white/30 overflow-hidden backdrop-blur-sm">
-                  <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1s] ease-in-out" />
+                <div className="absolute inset-0 flex items-center justify-center h-full">
+                  <div className="w-40 flex flex-col items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <span className="text-[10px] text-white uppercase tracking-[0.8em] font-black drop-shadow-lg">Revealing</span>
+                    <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-md">
+                      <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[0.8s] ease-out" />
+                    </div>
+                  </div>
                 </div>
               </div>
 

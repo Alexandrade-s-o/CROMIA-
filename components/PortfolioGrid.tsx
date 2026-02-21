@@ -160,11 +160,7 @@ const PortfolioGrid: React.FC = () => {
             )}
           </div>
         )}
-        {/* Title and subtle hint */}
-        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-zinc-900 animate-slide-up">
-          Portafolio
-        </h2>
-        <div className="w-12 h-px bg-zinc-900 mt-4 opacity-20" />
+
       </div>
 
       {/* Moda Section Ambient Glow */}

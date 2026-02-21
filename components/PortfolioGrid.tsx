@@ -279,18 +279,20 @@ const PortfolioGrid: React.FC = () => {
             <img
               key={activeImage.id}
               src={activeImage.url}
-              className="max-w-full max-h-full object-contain grayscale group-hover/modal:grayscale-0 transition-all duration-[1s] ease-in-out cursor-zoom-out animate-image-reveal"
-              style={{ transitionDelay: '1.2s' }}
+              className="max-w-full max-h-full object-contain grayscale group-hover/modal:grayscale-0 group-active/modal:grayscale-0 transition-all duration-[1s] ease-in-out cursor-zoom-out animate-image-reveal"
+              style={{ transitionDelay: '1.5s' }}
               alt="Full view"
               onClick={() => setActiveIndex(null)}
             />
 
             {/* Central iPhone-style Unlocker for the Modal */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none group-hover/modal:opacity-0 transition-opacity duration-500 delay-1000">
-              <div className="w-48 flex flex-col items-center gap-3">
-                <span className="text-[10px] text-white/80 uppercase tracking-[0.8em] font-black drop-shadow-lg animate-pulse">Slide to Reveal</span>
-                <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-md border border-white/10 shadow-2xl">
-                  <div className="h-full bg-[#D4A017] w-0 group-hover/modal:w-full transition-all duration-[1s] ease-in-out" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none group-hover/modal:opacity-0 group-active/modal:opacity-0 transition-opacity duration-300" style={{ transitionDelay: '1.5s' }}>
+              <div className="w-56 flex flex-col items-center gap-4">
+                <span className="text-[11px] text-white/90 uppercase tracking-[0.9em] font-black drop-shadow-2xl animate-shimmer bg-gradient-to-r from-white/20 via-white to-white/20 bg-[length:200%_100%] bg-clip-text text-transparent">
+                  Slide to Reveal
+                </span>
+                <div className="w-full h-[3px] bg-white/10 rounded-full overflow-hidden backdrop-blur-xl border border-white/5 shadow-2xl">
+                  <div className="h-full bg-gradient-to-r from-[#D4A017] to-[#FFD700] w-0 group-hover/modal:w-full group-active/modal:w-full transition-all duration-[1.5s] cubic-bezier(0.65, 0, 0.35, 1)" />
                 </div>
               </div>
             </div>
@@ -328,11 +330,16 @@ const PortfolioGrid: React.FC = () => {
           50% { transform: translateX(200%); }
           100% { transform: translateX(-100%); }
         }
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
         .animate-modal-reveal { animation: modalReveal 0.4s ease-out forwards; }
         .animate-image-reveal { animation: imageReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .animate-slide-up { animation: slideUpGrid 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .animate-fade-in-quick { animation: modalReveal 0.5s ease-out forwards; }
         .animate-tutorial-slide { animation: tutorialSlide 3s ease-in-out infinite; }
+        .animate-shimmer { animation: shimmer 3s infinite linear; }
       `}} />
     </div>
   );

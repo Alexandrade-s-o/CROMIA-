@@ -196,8 +196,11 @@ const PortfolioGrid: React.FC = () => {
               </div>
 
               {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 h-[3px] bg-white/10 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1.5s] ease-out" />
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-32 flex flex-col items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                <span className="text-[7px] text-white/40 uppercase tracking-[0.4em] font-bold">Unlock</span>
+                <div className="w-full h-[2.5px] bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1.2s] ease-in-out" />
+                </div>
               </div>
 
               <div className="absolute bottom-4 left-6">
@@ -219,13 +222,16 @@ const PortfolioGrid: React.FC = () => {
               <img
                 src={image.url}
                 alt={`${selectedCategory.title} ${idx}`}
-                className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110 group-active:grayscale-0 group-active:scale-110"
+                className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-125 group-active:grayscale-0 group-active:scale-125 delay-300"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
 
               {/* Minimalist Slider "Unlocker" */}
-              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-white/10 overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-700">
-                <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1s] ease-out" />
+              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 flex flex-col items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all duration-700">
+                <span className="text-[6px] text-white/50 uppercase tracking-[0.5em] font-bold">Unlock</span>
+                <div className="w-full h-[1px] bg-white/10 overflow-hidden">
+                  <div className="h-full bg-[#D4A017] w-0 group-hover:w-full transition-all duration-[1s] ease-in-out" />
+                </div>
               </div>
 
               <div className="absolute bottom-6 left-6 pointer-events-none">

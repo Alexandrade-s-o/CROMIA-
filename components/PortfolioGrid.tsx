@@ -87,6 +87,15 @@ const portfolioData: PortfolioCategory[] = [
       { id: 'm43', url: '/MODA/IMG_5012.JPG.jpeg' },
       { id: 'm44', url: '/MODA/IMG_5013.JPG.jpeg' },
       { id: 'm45', url: '/MODA/IMG_5014.JPG.jpeg' },
+      { id: 'm46', url: '/MODA/image00001.jpeg' },
+      { id: 'm47', url: '/MODA/image00002.jpeg' },
+      { id: 'm48', url: '/MODA/image00003.jpeg' },
+      { id: 'm49', url: '/MODA/image00004.jpeg' },
+      { id: 'm50', url: '/MODA/image00005.jpeg' },
+      { id: 'm51', url: '/MODA/image00006.jpeg' },
+      { id: 'm52', url: '/MODA/image00007.jpeg' },
+      { id: 'm53', url: '/MODA/image00008.jpeg' },
+      { id: 'm54', url: '/MODA/image00009.jpeg' },
     ]
   },
   {

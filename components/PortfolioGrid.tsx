@@ -44,6 +44,14 @@ const portfolioData: PortfolioCategory[] = [
       { id: 'da47', url: '/direccion-arte/DSC_2616.jpg' },
       { id: 'da48', url: '/direccion-arte/DSC_2617.jpg' },
       { id: 'da49', url: '/direccion-arte/DSC_2618.jpg' },
+      { id: 'da50', url: '/direccion-arte/2.JPEG' },
+      { id: 'da51', url: '/direccion-arte/21.JPEG' },
+      { id: 'da52', url: '/direccion-arte/a.JPEG' },
+      { id: 'da53', url: '/direccion-arte/bv.JPEG' },
+      { id: 'da54', url: '/direccion-arte/c.JPEG' },
+      { id: 'da55', url: '/direccion-arte/c2.JPEG' },
+      { id: 'da56', url: '/direccion-arte/d.JPEG' },
+      { id: 'da57', url: '/direccion-arte/z.JPEG' },
     ]
   },
 
@@ -135,6 +143,16 @@ const portfolioData: PortfolioCategory[] = [
       { id: 'e1', url: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200' },
       { id: 'e2', url: 'https://images.unsplash.com/photo-1581067720293-84051b9d4023?auto=format&fit=crop&q=80&w=1200' },
       { id: 'e3', url: 'https://images.unsplash.com/photo-1481824429379-07aa5e5b0739?auto=format&fit=crop&q=80&w=1200' },
+    ]
+  },
+  {
+    id: 'foto-producto',
+    title: 'Foto Producto',
+    coverImage: '/foto-producto/_DSC6043 (3).png',
+    images: [
+      { id: 'fp1', url: '/foto-producto/_DSC6043 (3).png' },
+      { id: 'fp2', url: '/foto-producto/WhatsApp Image 2026-03-01 at 10.41.43 PM (1).jpeg' },
+      { id: 'fp3', url: '/foto-producto/Zapatillas_Producto_Fondo Blanco 1 (4).png' },
     ]
   }
 ];
